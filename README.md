@@ -1,0 +1,2 @@
+# odo-template
+Simple templates
