@@ -15,4 +15,10 @@ bind = function() {
   };
 };
 
-module.exports = bind();
+if (typeof define !== "undefined" && define !== null) {
+  define([], bind);
+} else if (typeof module !== "undefined" && module !== null) {
+  module.exports = bind();
+} else {
+  window.template = bind();
+}

@@ -5,4 +5,9 @@ bind = ->
       return original if !payload[key]?
       payload[key]
 
-module.exports = bind()
+if define?
+  define [], bind
+else if module?
+  module.exports = bind()
+else
+  window.template = bind()
